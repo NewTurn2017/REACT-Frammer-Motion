@@ -16,15 +16,15 @@ const Box = styled(motion.div)`
   border-radius: 20px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `
+const myVars = {
+  start: { scale: 0 },
+  end: { scale: 1, rotateZ: 360, transition: { delay: 0.5, type: 'spring' } },
+}
 
 function App() {
   return (
     <Wrapper>
-      <Box
-        transition={{ delay: 0.5, type: 'spring' }}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1, rotateZ: 360 }}
-      />
+      <Box variants={myVars} initial="start" animate="end" />
     </Wrapper>
   )
 }
